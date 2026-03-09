@@ -1,0 +1,12 @@
+This file is a test file to see if the code works. sha256 gargoyle
+
+more words to test the code
+
+open
+
+empty
+
+
+fileshare
+
+rundll32

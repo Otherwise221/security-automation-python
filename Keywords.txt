@@ -1,0 +1,17 @@
+mimikatz,
+file,
+pencil
+gargoyle
+sha256
+rundll32
+mshta
+wscript
+powershell.exe
+tor
+exfil
+wget
+.dll
+keylogger
+rootkit
+payload
+bot
