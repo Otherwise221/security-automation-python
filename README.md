@@ -62,7 +62,7 @@ Users can add new malicious indicators to the keyword list at runtime. Duplicate
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/security-automation-python.git
+git clone https://github.com/Otherwise221/security-automation-python.git
 cd security-automation-python
 
 # Run the tool
@@ -77,16 +77,6 @@ python Analysis.py
 - **File integrity checking** — SHA-256 hashing to detect file tampering or known malware
 - **Threat intelligence management** — dynamic keyword library simulating IOC (Indicator of Compromise) feeds
 - **SOC triage workflows** — menu-driven interface modeling analyst decision points
-
----
-
-## Roadmap
-
-- [ ] Complete keyword deletion functionality
-- [ ] Implement suspicious pattern detection (Option C)
-- [ ] Implement behavioral signature analysis (Option D)
-- [ ] Add directory scanning (scan all files in a folder)
-- [ ] Export scan results to a report file
 
 ---
 
