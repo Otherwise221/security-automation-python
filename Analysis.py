@@ -13,8 +13,6 @@ def main():
         prompt = input("What would you like to do today:" \
         "\n A) Scan a file for malicious indicators" \
         "\n B) Turn a file into a hash" \
-        "\n C) Suspicious Patterns" \
-        "\n D) Behavioural Signatures" \
         "\n E) Add a keyword to the keyword List" \
         "\n F) Delete words for the keyword list" \
         "\n G) Compare a file to an existing hash (analyzing)"
@@ -41,15 +39,11 @@ def main():
                 print("File saved in hash library")
            
             print("...")
-        elif prompt == 'C':
-            print("g")
-        elif prompt == 'D':
-            print("g")
         elif prompt == 'E':
             add_keywords_to_file()
             print("...")
         elif prompt == 'F':
-            print("kk")
+            delete_keywords()
         elif prompt == 'G':
             input_1 = input("Filename: ")
             if not os.path.exists(input_1):
@@ -184,27 +178,32 @@ def hash_analyzer(input_1):
 #this function targets the key words file and deletes keywords or all the keywords in the file
 
 def delete_keywords():
+    keywords = loading_keywords() 
     prompt_1 = input("What would you like to delete?" \
     "\n A) A specific keyword" \
-    "\n B) All the keywords in the file").strip().lower()
+    "\n B) All the keywords in the file: ").strip().lower()
 
-    if prompt_1 == 'A':
-        print("Deleting keyword {prompt_1} from file....")
-        # [CODE TO DELETE A SPECIFIC KEYWORD FROM A FILE]
-
+    if prompt_1 == 'a':
+        del_keyword = input("Enter a keyword: ")
+        if del_keyword not in keywords: 
+            print ("The keyword you inputed does not exist")
+        else:
+            print(f'Deleting keyword {del_keyword} from file....')
+            new_keywords = [word for word in keywords if word != del_keyword]
+            with open ('Keywords.txt', 'w') as f:
+                for word in new_keywords:
+                    f.write(word + '\n')
+            print("The keyword has been deleted")
+        
+    elif prompt_1 == 'b':
         print("Deleting all the keywords")
-            #[CODE TO DELETE ALL THE KEYWORDS FROM THE FILE]
+        with open ('Keywords.txt', 'w') as f:
+            pass
         print("All the keywords have been deleted")
         return
     else: 
         print ("Error! Wrong input, Please try again")
         return
-    
-
+ 
 main()
 
-# TO DO LIST  3/06/2026
-
-# COMPELTE DELETE KEYWORD function
-# Suspicious Pattern stuff
-# Make / Update journal
